@@ -1,0 +1,11 @@
+# Environment files
+.env
+*.env
+.env.*
+
+# Sensitive files
+credentials.json
+token.json
+venv/
+__pycache__/
+*.pyc
