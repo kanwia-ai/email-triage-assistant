@@ -1,41 +1,15 @@
-# email-triage-assistant
+# Email Triage Assistant
 
-A template for building your own
+AI-powered daily email digest that classifies your inbox and delivers a prioritized summary via Slack DM.
 
-This is a work in progress and currently being tested.
+## What It Does
 
-## How to Use This Template
+The assistant connects to your Gmail account, reads unread emails from the last 24 hours, classifies each one using Gemini, auto-archives obvious noise, and sends you a structured Slack digest with everything that matters.
 
-1. Fork this repository
-2. Clone your fork locally
-3. Customize the configuration (see Customization section)
-4. Make it your own!
+## Features
 
-## Customization
-
-- Update configuration values marked with `YOUR_*` placeholders
-- Modify the logic to fit your specific use case
-- Add your own features and enhancements
-
-## The Problem It Solves
-
-This tool was built to solve a specific personal need.
-
-### How I Use It
-- [Describe your workflow]
-
-## Files
-
-
-- `auth_gmail.py`
-- `app.py`
-- `main.py`
-
-## Requirements
-
-- Python 3.x (if applicable)
-- See requirements.txt for dependencies (if present)
-
----
-
-*Generated with [Claude Code](https://claude.com/code)*
+- **Three-tier classification** -- emails are sorted into RESPOND (needs your action), FYI (informational), and ARCHIVE (noise)
+- **Auto-archiving** -- high-confidence noise (meeting notifications, payment receipts, automated summaries) is archived without manual intervention
+- **Slack DM digest** -- a single daily message groups emails by priority with direct Gmail links
+- |*Context-aware rules** -- classification prompt is tuned for a specific role and workflow, not generic heuristics
+- |*Runs on a schedule** -- deployed to Google Cloud Run and triggered by Cloud Scheduler
